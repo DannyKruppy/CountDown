@@ -10,4 +10,7 @@ public class GameManager : MonoBehaviour
     GameObject tankEnemy;
     [SerializeField]
     GameObject zoomerEnemy;
+
+    //enemy spawning
+    //health managment
 }

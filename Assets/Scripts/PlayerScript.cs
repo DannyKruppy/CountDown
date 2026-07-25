@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
@@ -15,6 +14,11 @@ public class PlayerScript : MonoBehaviour
     {
         characterController = this.GetComponent<CharacterController>();
         camera = transform.Find("Player Camera").gameObject;
+    }
+
+    private void Start()
+    {
+        //hide and lock cursor
     }
 
     void Update()
