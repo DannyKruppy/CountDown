@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class DronePlayerScript : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     [SerializeField] float lookSpeed;
@@ -40,6 +40,7 @@ public class DronePlayerScript : MonoBehaviour
             yMovement = -1;
         }
         Vector3 movement = new Vector3(xMovement, yMovement, zMovement).normalized;
+        movement = transform.TransformDirection(movement);
 
         //math for rotation
         yRotation = xMouse;
