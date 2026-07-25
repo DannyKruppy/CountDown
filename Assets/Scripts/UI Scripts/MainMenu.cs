@@ -24,7 +24,7 @@ public class MainMenu : MonoBehaviour
         // Re-hook TitleMusic automatically
         if (titleMusic == null)
         {
-            titleMusic = FindObjectOfType<TitleMusic>();
+            titleMusic = FindAnyObjectByType<TitleMusic>();
         }
     }
 
