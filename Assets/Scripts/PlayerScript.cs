@@ -10,6 +10,8 @@ public class PlayerScript : MonoBehaviour
     private float xRotation = 0f;
     private float yRotation = 0f;
 
+    // place towers when looking at a tower stand
+
     private void Awake()
     {
         characterController = this.GetComponent<CharacterController>();
@@ -23,9 +25,9 @@ public class PlayerScript : MonoBehaviour
 
     void Update()
     {
-        float zMovement = Input.GetAxisRaw("Vertical"); //forward and back
-        float xMovement = Input.GetAxisRaw("Horizontal"); //side to side
-        float yMovement = 0; //up and down
+        float zMovement = Input.GetAxisRaw("Vertical");
+        float xMovement = Input.GetAxisRaw("Horizontal");
+        float yMovement = 0;
 
         float xMouse = Input.GetAxisRaw("Mouse X") * lookSpeed;
         float yMouse = Input.GetAxisRaw("Mouse Y") * lookSpeed;

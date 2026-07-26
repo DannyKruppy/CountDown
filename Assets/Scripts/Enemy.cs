@@ -12,6 +12,11 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if(health<=0)
+        {
+            Destroy(this.gameObject);
+        }
+
         if(Vector3.Distance(this.transform.position, waypoints[currentWP].transform.position) < 3)
         {
             currentWP++;
