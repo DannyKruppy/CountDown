@@ -12,17 +12,27 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
-        if(health<=0)
-        {
-            Destroy(this.gameObject);
-        }
-
         if(Vector3.Distance(this.transform.position, waypoints[currentWP].transform.position) < 3)
         {
             currentWP++;
         }
 
+        if (currentWP == waypoints.Length)
+        {
+            Destroy(this.gameObject);
+            currentWP = 0;
+            //reduce hp
+        }
+
+        if(health <= 0)
+        {
+            Destroy(this.gameObject);
+            currentWP = 0;
+            //give money
+        }
+
         this.transform.LookAt(waypoints[currentWP].transform);
+        this.transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
         this.transform.Translate(0 , 0, speed * Time.deltaTime);
     }
 }
